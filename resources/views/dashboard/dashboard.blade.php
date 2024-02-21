@@ -3,7 +3,13 @@
 
 @section('content')
    
-<h1>
+@if(auth()->check())
+<h3>
 Hi, {{ auth()->user()->name }}
-</h1>
+
+</h3>
+            
+        @else
+            <a class="nav-link" href="/login">Login</a>
+        @endif
 @endsection

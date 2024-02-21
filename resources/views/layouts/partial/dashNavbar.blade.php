@@ -47,7 +47,7 @@
                                 Class
                             </a>
                         <li class="nav-item">
-                            <form id="logoutForm" class="nav-link d-flex align-items-center text-danger" action="logout" method="auth">
+                            <form id="logoutForm" class="nav-link d-flex align-items-center text-danger" action="/logout" method="auth">
                                 <span class="material-symbols-outlined">logout</span>
                                 <button type="submit" class="nav-link d-flex align-items-start p-2 text-danger" aria-current="page">Logout</button>
                             </form>
@@ -69,7 +69,7 @@
     document.getElementById("logoutForm").addEventListener("submit", function(event) {
         var confirmLogout = confirm("Are you sure you want to logout?");
         if (!confirmLogout) {
-            event.preventDefault(); // Prevent the form from submitting
+            event.preventDefault(); 
         }
     });
 </script>

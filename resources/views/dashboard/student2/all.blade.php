@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="container" style= "width: 950px;">
+<div class="container" style= "width: 1100px;">
     <h1>Siswa</h1>
     <a class="btn btn-primary mb-2" href="/student2/create" role="button">Add New Data</a>
     @if(session()->has('success'))

@@ -23,17 +23,22 @@
         </li> 
         </ul>
         <ul class="navbar-nav ms-auto" style="margin-right: 70px;">
-    <li class="nav-item dropdown">
-        @if(auth()->check())
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                Hi, {{ auth()->user()->name }}
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="/logout">Logout</a></li>
-            </ul>
-        @else
-            <a class="nav-link" href="/login">Login</a>
-        @endif
+        <li class="nav-item dropdown">
+    @if(auth()->check())
+        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+            Hi, {{ auth()->user()->name }}
+        </a>
+        <ul class="dropdown-menu">
+            <li>
+                <a class="dropdown-item" href="#" onclick="confirmLogout()">Logout</a>
+                <a class="dropdown-item" href="/dashboard">Dashboard</a>
+
+            </li>
+        </ul>
+    @else
+        <a class="nav-link" href="/login">Login</a>
+    @endif
+</li>
     </li>
 </ul>
           </li>
@@ -44,9 +49,9 @@
 </nav>   
 
 <script>
-    function logout() {
-        if (confirm('Are you sure you want to logout?')) {
-            window.location.href = '/logout';
+    function confirmLogout() {
+        if (confirm("Are you sure you want to logout?")) {
+            window.location.href = "/logout";
         }
     }
 </script>
